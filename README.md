@@ -266,8 +266,13 @@ python3 run_smollm2.py \
   --tokenizer models/bitnet700m/tokenizer.json \
   --agent --constrained-args --planner route --online \
   --workspace ./nanow_workspace --kv-cache-dir ./.kv \
-  --task "create todo.txt with the content buy milk then read it" --max-steps 3
+  --prompt "create todo.txt with the content buy milk then read it" --max-steps 3
 ```
+
+The runner turns that into `write_file(todo.txt, "buy milk")` then
+`read_file(todo.txt)`. Note that only the tool calls are reliable — the model's
+free-generated closing prose is not, because this checkpoint is not
+instruction-tuned.
 
 ---
 
@@ -288,6 +293,9 @@ to prompts, not to a chat template.
 
 - **700M-parameter quality.** Coherent for short and medium generations; it will
   invent facts, lose the thread on long outputs, and mangle multi-step reasoning.
+- **Reliable tool calls, unreliable narration.** Under constrained decoding the
+  tool call is correct, but the closing prose the model writes afterwards often
+  drifts. Trust the tool transcript, not the summary.
 - **Not instruction-tuned.** No RLHF/DPO/SFT stage. Treat it as a base model.
 - **Free-generation tool calls are unreliable** (5/8 best case). Use
   `--constrained-args`.
