@@ -5,6 +5,7 @@ language:
 library_name: nanow
 pipeline_tag: text-generation
 base_model: 1bitLLM/bitnet_b1_58-large
+base_model_relation: quantized
 tags:
   - ternary
   - bitnet
