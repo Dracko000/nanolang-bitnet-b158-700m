@@ -135,11 +135,14 @@ a laptop or a cheap VPS:
 | Effective DRAM read | 7.7–9.1 GB/s |
 | First working version, same box | 1.14 tok/s → **~20× faster** |
 
-The 350 MiB container defines a hard decode roofline — one full sweep of the
-weights per token. At 22–26 tok/s that is 7.7–9.1 GB/s of effective bandwidth, so
-the runtime is operating close to what this memory system can deliver. There is
-little headroom left without shrinking the weights further (see the embedding
-note above) or moving to a wider memory bus.
+The 350 MiB container defines the obvious decode ceiling — one full sweep of the
+weights per token. A streaming memory probe on this same box reaches **~16 GB/s**,
+which puts the roofline for a 350 MiB container at **~41–44 tok/s**. Measured
+decode is 22–26 tok/s, i.e. **~51–60 % of that roofline**, so the runtime is *not*
+purely bandwidth-limited: the 2-bit unpack and the int8 add/sub work sit
+alongside the memory traffic, and which of the two ceilings binds is still an open
+question. An earlier version of this card claimed the runtime was already close to
+the memory limit; the probe above shows it is not.
 
 Run-to-run variance on this shared machine is ±5–10 %; figures near the noise
 floor are reported as such rather than rounded up.
