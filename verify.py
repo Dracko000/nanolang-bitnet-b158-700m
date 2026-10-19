@@ -38,6 +38,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # little-endian order (the header comment upstream reads 'N','A','N','O' as the
 # intent, not the byte order). We compare the integer, which is unambiguous.
 MAGIC = 0x4E414E4F
+# Header feature flags. A model container leaves these clear; a KV cache — which
+# shares this layout — sets this bit. Mirrors NANOW_FLAG_KV_CACHE in
+# phase1/include/nanow_format.h.
+KV_CACHE_FLAG = 0x0001
 HEADER_FMT = "<IIII IIII QQ I 3I"
 DESC_FMT = "<64s III 4I Q Q Q f"
 HEADER_SIZE = struct.calcsize(HEADER_FMT)      # 64
@@ -120,9 +124,15 @@ def check_container() -> list[str]:
         if len(head) < HEADER_SIZE:
             problems.append(f"{name}: truncated header")
             return problems
-        magic, version, _flags, n_tensors, *_ = struct.unpack(HEADER_FMT, head)
+        magic, version, flags, n_tensors, *_ = struct.unpack(HEADER_FMT, head)
         if magic != MAGIC:
             problems.append(f"{name}: bad magic {magic:#x}, expected {MAGIC:#x}")
+            return problems
+        if flags & KV_CACHE_FLAG:
+            problems.append(
+                f"{name}: header flags {flags:#x} mark this as a KV cache, not model "
+                f"weights; verify.py checks model containers"
+            )
             return problems
         if version != man["format_version"]:
             problems.append(f"{name}: format_version {version} != manifest {man['format_version']}")
