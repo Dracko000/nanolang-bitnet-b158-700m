@@ -151,6 +151,14 @@ floor are reported as such rather than rounded up.
 Everything below is implemented in the engine under
 [`Dracko000/nanolang`](https://github.com/Dracko000/nanolang).
 
+One clarification, because the engine's whitepaper is broader than its inference
+path: the whitepaper also sketches an MLIR-style IR (`nano-ir`), a ternary-SSM
+backbone to replace attention, and a semantic-bytecode layer. **None of those are
+used by this model.** The released checkpoint is an ordinary attention transformer
+and it contains zero SSM tensors. What is used is the `.nanow` container, the
+ternary kernels, and the runtime described here. The engine README has a
+"What actually runs" table that draws the same line.
+
 ### Ternary-native execution
 
 The inner loop is not a floating-point multiply-add. Ternary weights let the
