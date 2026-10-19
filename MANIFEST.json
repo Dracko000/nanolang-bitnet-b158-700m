@@ -1,0 +1,4549 @@
+{
+  "container": "nanow",
+  "format_version": 1,
+  "file": "bitnet700m.nanow",
+  "file_bytes": 367513600,
+  "file_sha256": "97e9281739c2488f44ea0fc3fcdf47667b3de432917c84c57de4a5e68486c9be",
+  "source_checkpoint": {
+    "repo": "1bitLLM/bitnet_b1_58-large",
+    "license": "mit",
+    "train_context": "redpajama, 100B tokens",
+    "upstream_file": "model.safetensors",
+    "upstream_dtype": "float32 (master weights, quantised to ternary at load)",
+    "upstream_bytes": 2915408840
+  },
+  "architecture": {
+    "n_layers": 24,
+    "hidden_size": 1536,
+    "intermediate_size": 4096,
+    "vocab_size": 32002,
+    "num_attention_heads": 16,
+    "num_key_value_heads": 16,
+    "head_dim": 96,
+    "max_position_embeddings": 2048,
+    "rope_theta": 10000.0,
+    "rms_norm_eps": 1e-05,
+    "hidden_act": "silu",
+    "tie_word_embeddings": true,
+    "attention_bias": false
+  },
+  "total_params": 728842752,
+  "ternary_params": 679477248,
+  "ternary_tensor_count": 168,
+  "float_tensor_count": 98,
+  "float_params": 49365504,
+  "tensor_count": 266,
+  "weight_storage_bytes": 169869312,
+  "float_storage_bytes": 197462016,
+  "groups": {
+    "ternary_2bit": {
+      "tensors": 168,
+      "params": 679477248,
+      "bits_per_weight": 2,
+      "bytes": 169869312
+    },
+    "float32": {
+      "tensors": 98,
+      "params": 49365504,
+      "bits_per_weight": 32,
+      "bytes": 197462016
+    }
+  },
+  "tensors": [
+    {
+      "name": "embed_tokens",
+      "logical_shape": [],
+      "params": 49155072,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          32002,
+          1536
+        ],
+        "bytes": 196620288,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "final_norm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.0.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.0.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05309474840760231
+    },
+    {
+      "name": "layers.0.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.09000534564256668
+    },
+    {
+      "name": "layers.0.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05217169225215912
+    },
+    {
+      "name": "layers.0.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.09152302891016006
+    },
+    {
+      "name": "layers.0.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.0.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06924431025981903
+    },
+    {
+      "name": "layers.0.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.0.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05081623047590256
+    },
+    {
+      "name": "layers.0.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0478353314101696
+    },
+    {
+      "name": "layers.0.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.1.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.1.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.042175766080617905
+    },
+    {
+      "name": "layers.1.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06074455752968788
+    },
+    {
+      "name": "layers.1.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.041836321353912354
+    },
+    {
+      "name": "layers.1.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.04872236028313637
+    },
+    {
+      "name": "layers.1.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.1.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06888508796691895
+    },
+    {
+      "name": "layers.1.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.1.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05626283586025238
+    },
+    {
+      "name": "layers.1.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.052703361958265305
+    },
+    {
+      "name": "layers.1.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.10.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.10.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05456823483109474
+    },
+    {
+      "name": "layers.10.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07305143028497696
+    },
+    {
+      "name": "layers.10.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05806899070739746
+    },
+    {
+      "name": "layers.10.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06874804198741913
+    },
+    {
+      "name": "layers.10.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.10.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08016402274370193
+    },
+    {
+      "name": "layers.10.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.10.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07446052134037018
+    },
+    {
+      "name": "layers.10.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07092336565256119
+    },
+    {
+      "name": "layers.10.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.11.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.11.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05930984020233154
+    },
+    {
+      "name": "layers.11.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0827941969037056
+    },
+    {
+      "name": "layers.11.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06172722578048706
+    },
+    {
+      "name": "layers.11.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07339797914028168
+    },
+    {
+      "name": "layers.11.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.11.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08065174520015717
+    },
+    {
+      "name": "layers.11.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.11.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07443000376224518
+    },
+    {
+      "name": "layers.11.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07170993089675903
+    },
+    {
+      "name": "layers.11.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.12.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.12.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05863942950963974
+    },
+    {
+      "name": "layers.12.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08231644332408905
+    },
+    {
+      "name": "layers.12.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06175607442855835
+    },
+    {
+      "name": "layers.12.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07323939353227615
+    },
+    {
+      "name": "layers.12.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.12.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08107565343379974
+    },
+    {
+      "name": "layers.12.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.12.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07528521120548248
+    },
+    {
+      "name": "layers.12.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07261814177036285
+    },
+    {
+      "name": "layers.12.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.13.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.13.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.061111509799957275
+    },
+    {
+      "name": "layers.13.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08915991336107254
+    },
+    {
+      "name": "layers.13.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06374280899763107
+    },
+    {
+      "name": "layers.13.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08038217574357986
+    },
+    {
+      "name": "layers.13.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.13.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08097513020038605
+    },
+    {
+      "name": "layers.13.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.13.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07512986660003662
+    },
+    {
+      "name": "layers.13.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07268252968788147
+    },
+    {
+      "name": "layers.13.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.14.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.14.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.058783989399671555
+    },
+    {
+      "name": "layers.14.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08714848756790161
+    },
+    {
+      "name": "layers.14.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06280947476625443
+    },
+    {
+      "name": "layers.14.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07706604897975922
+    },
+    {
+      "name": "layers.14.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.14.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08313976228237152
+    },
+    {
+      "name": "layers.14.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.14.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07738695293664932
+    },
+    {
+      "name": "layers.14.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07445411384105682
+    },
+    {
+      "name": "layers.14.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.15.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.15.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05537837743759155
+    },
+    {
+      "name": "layers.15.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08116205781698227
+    },
+    {
+      "name": "layers.15.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.058894895017147064
+    },
+    {
+      "name": "layers.15.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07332009822130203
+    },
+    {
+      "name": "layers.15.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.15.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0833703875541687
+    },
+    {
+      "name": "layers.15.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.15.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07805371284484863
+    },
+    {
+      "name": "layers.15.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07526952028274536
+    },
+    {
+      "name": "layers.15.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.16.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.16.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.060697995126247406
+    },
+    {
+      "name": "layers.16.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08508002012968063
+    },
+    {
+      "name": "layers.16.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06413570046424866
+    },
+    {
+      "name": "layers.16.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0798107236623764
+    },
+    {
+      "name": "layers.16.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.16.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08586616814136505
+    },
+    {
+      "name": "layers.16.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.16.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07855160534381866
+    },
+    {
+      "name": "layers.16.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07537764310836792
+    },
+    {
+      "name": "layers.16.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.17.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.17.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05734618008136749
+    },
+    {
+      "name": "layers.17.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07824519276618958
+    },
+    {
+      "name": "layers.17.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05997871980071068
+    },
+    {
+      "name": "layers.17.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07185200601816177
+    },
+    {
+      "name": "layers.17.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.17.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08740058541297913
+    },
+    {
+      "name": "layers.17.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.17.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07955005764961243
+    },
+    {
+      "name": "layers.17.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0771007165312767
+    },
+    {
+      "name": "layers.17.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.18.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.18.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0481114536523819
+    },
+    {
+      "name": "layers.18.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07290632277727127
+    },
+    {
+      "name": "layers.18.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05187283083796501
+    },
+    {
+      "name": "layers.18.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06689699739217758
+    },
+    {
+      "name": "layers.18.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.18.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08867990970611572
+    },
+    {
+      "name": "layers.18.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.18.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0803990438580513
+    },
+    {
+      "name": "layers.18.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07828840613365173
+    },
+    {
+      "name": "layers.18.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.19.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.19.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.050196144729852676
+    },
+    {
+      "name": "layers.19.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0698411837220192
+    },
+    {
+      "name": "layers.19.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.053973134607076645
+    },
+    {
+      "name": "layers.19.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0635123997926712
+    },
+    {
+      "name": "layers.19.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.19.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08979572355747223
+    },
+    {
+      "name": "layers.19.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.19.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08129310607910156
+    },
+    {
+      "name": "layers.19.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07943103462457657
+    },
+    {
+      "name": "layers.19.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.2.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.2.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.048715170472860336
+    },
+    {
+      "name": "layers.2.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06329049170017242
+    },
+    {
+      "name": "layers.2.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0503741055727005
+    },
+    {
+      "name": "layers.2.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.054667260497808456
+    },
+    {
+      "name": "layers.2.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.2.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0721350908279419
+    },
+    {
+      "name": "layers.2.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.2.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06288415193557739
+    },
+    {
+      "name": "layers.2.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05882219970226288
+    },
+    {
+      "name": "layers.2.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.20.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.20.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.052080828696489334
+    },
+    {
+      "name": "layers.20.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07764803618192673
+    },
+    {
+      "name": "layers.20.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.054796990007162094
+    },
+    {
+      "name": "layers.20.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07164405286312103
+    },
+    {
+      "name": "layers.20.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.20.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.09064750373363495
+    },
+    {
+      "name": "layers.20.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.20.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08252356946468353
+    },
+    {
+      "name": "layers.20.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08081860840320587
+    },
+    {
+      "name": "layers.20.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.21.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.21.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05050818249583244
+    },
+    {
+      "name": "layers.21.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07373475283384323
+    },
+    {
+      "name": "layers.21.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05414806678891182
+    },
+    {
+      "name": "layers.21.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06580392271280289
+    },
+    {
+      "name": "layers.21.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.21.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.09085104614496231
+    },
+    {
+      "name": "layers.21.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.21.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08352682739496231
+    },
+    {
+      "name": "layers.21.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08185943961143494
+    },
+    {
+      "name": "layers.21.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.22.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.22.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05100319907069206
+    },
+    {
+      "name": "layers.22.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07292827218770981
+    },
+    {
+      "name": "layers.22.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05493060499429703
+    },
+    {
+      "name": "layers.22.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06405061483383179
+    },
+    {
+      "name": "layers.22.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.22.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08813554048538208
+    },
+    {
+      "name": "layers.22.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.22.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08551624417304993
+    },
+    {
+      "name": "layers.22.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0832001268863678
+    },
+    {
+      "name": "layers.22.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.23.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.23.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.04812821000814438
+    },
+    {
+      "name": "layers.23.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06044459342956543
+    },
+    {
+      "name": "layers.23.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05074579268693924
+    },
+    {
+      "name": "layers.23.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.060024719685316086
+    },
+    {
+      "name": "layers.23.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.23.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08456361293792725
+    },
+    {
+      "name": "layers.23.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.23.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08650171756744385
+    },
+    {
+      "name": "layers.23.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0826575830578804
+    },
+    {
+      "name": "layers.23.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.3.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.3.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.050549931824207306
+    },
+    {
+      "name": "layers.3.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06642059236764908
+    },
+    {
+      "name": "layers.3.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05093754082918167
+    },
+    {
+      "name": "layers.3.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.059514548629522324
+    },
+    {
+      "name": "layers.3.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.3.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07340425252914429
+    },
+    {
+      "name": "layers.3.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.3.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06683477759361267
+    },
+    {
+      "name": "layers.3.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06229095160961151
+    },
+    {
+      "name": "layers.3.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.4.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.4.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05181717500090599
+    },
+    {
+      "name": "layers.4.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0779738575220108
+    },
+    {
+      "name": "layers.4.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05244029685854912
+    },
+    {
+      "name": "layers.4.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06622470170259476
+    },
+    {
+      "name": "layers.4.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.4.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07311031222343445
+    },
+    {
+      "name": "layers.4.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.4.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06632837653160095
+    },
+    {
+      "name": "layers.4.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06264186650514603
+    },
+    {
+      "name": "layers.4.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.5.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.5.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.04998626932501793
+    },
+    {
+      "name": "layers.5.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06618689745664597
+    },
+    {
+      "name": "layers.5.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05218115821480751
+    },
+    {
+      "name": "layers.5.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05890165641903877
+    },
+    {
+      "name": "layers.5.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.5.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07255932688713074
+    },
+    {
+      "name": "layers.5.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.5.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06676393747329712
+    },
+    {
+      "name": "layers.5.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06394942104816437
+    },
+    {
+      "name": "layers.5.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.6.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.6.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.04746241122484207
+    },
+    {
+      "name": "layers.6.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07087375223636627
+    },
+    {
+      "name": "layers.6.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05021638423204422
+    },
+    {
+      "name": "layers.6.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06467128545045853
+    },
+    {
+      "name": "layers.6.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.6.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07489080727100372
+    },
+    {
+      "name": "layers.6.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.6.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06938973814249039
+    },
+    {
+      "name": "layers.6.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06640508770942688
+    },
+    {
+      "name": "layers.6.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.7.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.7.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05203796923160553
+    },
+    {
+      "name": "layers.7.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07197893410921097
+    },
+    {
+      "name": "layers.7.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05325073003768921
+    },
+    {
+      "name": "layers.7.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06634896993637085
+    },
+    {
+      "name": "layers.7.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.7.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07633288204669952
+    },
+    {
+      "name": "layers.7.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.7.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07006421685218811
+    },
+    {
+      "name": "layers.7.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06744825839996338
+    },
+    {
+      "name": "layers.7.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.8.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.8.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.056328319013118744
+    },
+    {
+      "name": "layers.8.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.08178708702325821
+    },
+    {
+      "name": "layers.8.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.060644011944532394
+    },
+    {
+      "name": "layers.8.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07281476259231567
+    },
+    {
+      "name": "layers.8.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.8.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07882454991340637
+    },
+    {
+      "name": "layers.8.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.8.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0718119814991951
+    },
+    {
+      "name": "layers.8.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.0688222348690033
+    },
+    {
+      "name": "layers.8.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.9.attn.inner_attn_ln",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.9.attn.k_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05417861044406891
+    },
+    {
+      "name": "layers.9.attn.o_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07637566328048706
+    },
+    {
+      "name": "layers.9.attn.q_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.05706646293401718
+    },
+    {
+      "name": "layers.9.attn.v_proj",
+      "logical_shape": [
+        1536,
+        1536
+      ],
+      "params": 2359296,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          589824
+        ],
+        "bytes": 589824,
+        "bits_per_weight": 2
+      },
+      "scale": 0.06885364651679993
+    },
+    {
+      "name": "layers.9.input_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.9.mlp.down_proj",
+      "logical_shape": [
+        1536,
+        4096
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07972045242786407
+    },
+    {
+      "name": "layers.9.mlp.ffn_layernorm",
+      "logical_shape": [],
+      "params": 4096,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          4096
+        ],
+        "bytes": 16384,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    },
+    {
+      "name": "layers.9.mlp.gate_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07432685792446136
+    },
+    {
+      "name": "layers.9.mlp.up_proj",
+      "logical_shape": [
+        4096,
+        1536
+      ],
+      "params": 6291456,
+      "ternary": true,
+      "storage": {
+        "dtype": "uint8",
+        "packed_shape": [
+          1572864
+        ],
+        "bytes": 1572864,
+        "bits_per_weight": 2
+      },
+      "scale": 0.07090833783149719
+    },
+    {
+      "name": "layers.9.post_attention_layernorm",
+      "logical_shape": [],
+      "params": 1536,
+      "ternary": false,
+      "storage": {
+        "dtype": "float32",
+        "packed_shape": [
+          1536
+        ],
+        "bytes": 6144,
+        "bits_per_weight": 32
+      },
+      "scale": 1.0
+    }
+  ]
+}
